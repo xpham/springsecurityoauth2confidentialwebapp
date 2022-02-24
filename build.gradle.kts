@@ -16,14 +16,22 @@ repositories {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter")
+    // kotlin
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    developmentOnly("org.springframework.boot:spring-boot-devtools")
+
+    // spring boot
+    implementation ("org.springframework.boot:spring-boot-starter-web")
+    runtimeOnly ("org.glassfish.jaxb:jaxb-runtime")
+
+//    developmentOnly("org.springframework.boot:spring-boot-devtools")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 
     // spring security oauth2
     implementation ("org.springframework.security.oauth:spring-security-oauth2:2.4.1.RELEASE")
+
+    // spring security
+//    implementation ("org.springframework.security:spring-security-crypto:5.6.1")
 }
 
 tasks.withType<KotlinCompile> {
